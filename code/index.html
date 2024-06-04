@@ -3,174 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的游戏商店</title>
+    <title>Game World</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
 <body>
     <header>
-        <h1>我的游戏商店</h1>
         <nav>
             <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="product.html">产品</a></li>
-                <li><a href="checkout.html">结账</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">cart</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="game-list">
-            <h2>最新游戏</h2>
             <div class="game-card" data-game-id="1" data-game-name="destiny2" data-game-price="0.00">
-                <h3>Destiny 2</h3>
-                <img src="images/game/destiny2.png" alt="destiny2"> 
+                <h3 id="hover">Destiny 2</h3>
+                <img id="hover" src="images/game/destiny2.png" alt="destiny2"> 
                 <p class="game-description">Destiny 2 is a free-to-play, massive multiplayer online action game set in an evolving world. You can play with your friends anytime, anywhere.</p>
                 <div class="price">FREE!</div>
-                <button data-game-id="1" data-game-name="destiny2" data-game-price="0.00">加入购物车</button>
+                <button data-game-id="1" data-game-name="destiny2" data-game-price="0.00">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="2" data-game-name="MonsterHunterWorld" data-game-price="29.99">
-                <img src="images/game/MonsterHunterWorld.png" alt="MonsterHunterWorld">
-                <h3>Monster Hunter: World</h3>
+                <img id="hover"src="images/game/MonsterHunterWorld.png" alt="MonsterHunterWorld">
+                <h3 id="hover">Monster Hunter: World</h3>
                 <p class="game-description">Welcome to a new world! In Monster Hunter: World, the latest installment in the series, you can enjoy the ultimate hunting experience, using everything at your disposal to hunt monsters in a new world teeming with surprises and excitement.</p>
                 <div class="price">$ 29.99</div>
-                <button data-game-id="2" data-game-name="MonsterHunterWorld" data-game-price="29.99">加入购物车</button>
+                <button data-game-id="2" data-game-name="MonsterHunterWorld" data-game-price="29.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="3" data-game-name="Red Dead Redemption 2" data-game-price="39.99">
-                <img src="images\game\RedDeadRedemption2.png" alt="Red Dead Redemption 2">
-                <h3>Red Dead Redemption 2</h3>
+                <img id="hover"src="images\game\RedDeadRedemption2.png" alt="Red Dead Redemption 2">
+                <h3 id="hover">Red Dead Redemption 2</h3>
                 <p class="game-description">Red Dead Redemption 2 is a sprawling epic tale of life in America’s unforgiving heartland. In a world on the brink of change, Arthur Morgan and the Van der Linde gang must survive in a rapidly shrinking space.</p>
                 <div class="price">$ 39.99</div>
-                <button data-game-id="3" data-game-name="Red Dead Redemption 2" data-game-price="39.99">加入购物车</button>
+                <button data-game-id="3" data-game-name="Red Dead Redemption 2" data-game-price="39.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="4" data-game-name="The Witcher 3: Wild Hunt" data-game-price="19.99">
-                <img src="images\game\TheWitcher3.png" alt="The Witcher 3: Wild Hunt">
-                <h3>The Witcher 3: Wild Hunt</h3>
+                <img id="hover"src="images\game\TheWitcher3.png" alt="The Witcher 3: Wild Hunt">
+                <h3 id="hover">The Witcher 3: Wild Hunt</h3>
                 <p class="game-description">Geralt of Rivia, a professional monster slayer, is caught in the crossfire of a war raging across the Northern Kingdoms. With vast open worlds to explore, you'll encounter powerful enemies and make choices that will forever shape the fate of the world.</p>
                 <div class="price">$ 19.99</div>
-                <button data-game-id="4" data-game-name="The Witcher 3: Wild Hunt" data-game-price="19.99">加入购物车</button>
+                <button data-game-id="4" data-game-name="The Witcher 3: Wild Hunt" data-game-price="19.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="5" data-game-name="Elden Ring" data-game-price="59.99">
-                <img src="images\game\EldenRing.png" alt="Elden Ring">
-                <h3>Elden Ring</h3>
+                <img id="hover"src="images\game\EldenRing.png" alt="Elden Ring">
+                <h3 id="hover">Elden Ring</h3>
                 <p class="game-description">Elden Ring is an action role-playing game developed by FromSoftware and published by Bandai Namco Entertainment. The game is set in the Lands Between, a vast and interconnected world.</p>
                 <div class="price">$ 59.99</div>
-                <button data-game-id="5" data-game-name="Elden Ring" data-game-price="59.99">加入购物车</button>
+                <button data-game-id="5" data-game-name="Elden Ring" data-game-price="59.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="6" data-game-name="God of War" data-game-price="19.99">
-                <img src="images\game\GodOfWar.png" alt="God of War">
-                <h3>God of War</h3>
+                <img id="hover"src="images\game\GodOfWar.png" alt="God of War">
+                <h3 id="hover">God of War</h3>
                 <p class="game-description">God of War is an action-adventure game developed by Sony Santa Monica Studio and published by Sony Interactive Entertainment. The game is set in Norse mythology and follows the story of Kratos, the Greek god of war, as he attempts to atone for his past sins.</p>
                 <div class="price">$ 19.99</div>
-                <button data-game-id="6" data-game-name="God of War" data-game-price="19.99">加入购物车</button>
+                <button data-game-id="6" data-game-name="God of War" data-game-price="19.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="7" data-game-name="Horizon Zero Dawn" data-game-price="29.99">
-                <img src="images\game\HorizonZeroDawn.png" alt="Horizon Zero Dawn">
-                <h3>Horizon Zero Dawn</h3>
+                <img id="hover"src="images\game\HorizonZeroDawn.png" alt="Horizon Zero Dawn">
+                <h3 id="hover">Horizon Zero Dawn</h3>
                 <p class="game-description">Horizon Zero Dawn is an action role-playing game developed by Guerrilla Games and published by Sony Interactive Entertainment. The game is set in a post-apocalyptic world where humanity has been overthrown by machines.</p>
                 <div class="price">$ 29.99</div>
-                <button data-game-id="7" data-game-name="Horizon Zero Dawn" data-game-price="29.99">加入购物车</button>
+                <button data-game-id="7" data-game-name="Horizon Zero Dawn" data-game-price="29.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="8" data-game-name="Grand Theft Auto V" data-game-price="29.99">
-                <img src="images\game\GrandTheftAutoV.png" alt="Grand Theft Auto V">
-                <h3>Grand Theft Auto V</h3>
+                <img id="hover"src="images\game\GrandTheftAutoV.png" alt="Grand Theft Auto V">
+                <h3 id="hover">Grand Theft Auto V</h3>
                 <p class="game-description">Grand Theft Auto V is an action-adventure game developed by Rockstar North and published by Rockstar Games. The game is set in the fictional state of San Andreas, based on Southern California.</p>
                 <div class="price">$ 29.99</div>
-                <button data-game-id="8" data-game-name="Grand Theft Auto V" data-game-price="29.99">加入购物车</button>
+                <button data-game-id="8" data-game-name="Grand Theft Auto V" data-game-price="29.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="9" data-game-name="Cyberpunk 2077" data-game-price="39.99">
-                <img src="images\game\Cyberpunk2077.png" alt="Cyberpunk 2077">
-                <h3>Cyberpunk 2077</h3>
+                <img id="hover"src="images\game\Cyberpunk2077.png" alt="Cyberpunk 2077">
+                <h3 id="hover">Cyberpunk 2077</h3>
                 <p class="game-description">Cyberpunk 2077 is an action role-playing game developed and published by CD Projekt Red. The game is set in Night City, a fictional metropolis in the state of California.</p>
                 <div class="price">$ 39.99</div>
-                <button data-game-id="9" data-game-name="Cyberpunk 2077" data-game-price="39.99">加入购物车</button>
+                <button data-game-id="9" data-game-name="Cyberpunk 2077" data-game-price="39.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="10" data-game-name="Marvel’s Spider-Man Remastered" data-game-price="19.99">
-                <img src="images\game\SpiderMan.png" alt="Spider-Man: Miles Morales">
-                <h3>Marvel’s Spider-Man Remastered</h3>
+                <img id="hover"src="images\game\SpiderMan.png" alt="Spider-Man: Miles Morales">
+                <h3 id="hover">Marvel’s Spider-Man Remastered</h3>
                 <p class="game-description">Marvel’s Spider-Man Remastered is a superhero action-adventure game developed by Insomniac Games and published by Sony Interactive Entertainment. The game is set in the Marvel Universe.</p>
                 <div class="price">$ 19.99</div>
-                <button data-game-id="10" data-game-name="Marvel’s Spider-Man Remastered" data-game-price="19.99">加入购物车</button>
+                <button data-game-id="10" data-game-name="Marvel’s Spider-Man Remastered" data-game-price="19.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="11" data-game-name="Ghost of Tsushima" data-game-price="49.99">
-                <img src="images\game\GhostOfTsushima.png" alt="Ghost of Tsushima">
-                <h3>Ghost of Tsushima</h3>
+                <img id="hover"src="images\game\GhostOfTsushima.png" alt="Ghost of Tsushima">
+                <h3 id="hover">Ghost of Tsushima</h3>
                 <p class="game-description">Ghost of Tsushima is an action-adventure game developed by Sucker Punch Productions and published by Sony Interactive Entertainment. The game is set on the Japanese island of Tsushima during the Mongol invasion of Japan.</p>
                 <div class="price">$ 49.99</div>
-                <button data-game-id="11" data-game-name="Ghost of Tsushima" data-game-price="49.99">加入购物车</button>
+                <button data-game-id="11" data-game-name="Ghost of Tsushima" data-game-price="49.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="12" data-game-name="Death Stranding" data-game-price="39.99">
-                <img src="images\game\DeathStranding.png" alt="Death Stranding">
-                <h3>Death Stranding</h3>
+                <img id="hover"src="images\game\DeathStranding.png" alt="Death Stranding">
+                <h3 id="hover">Death Stranding</h3>
                 <p class="game-description">Death Stranding is an action game developed and published by Kojima Productions. The game is set in a post-apocalyptic world where the United States has been divided into isolated regions.</p>
                 <div class="price">$ 39.99</div>
-                <button data-game-id="12" data-game-name="Death Stranding" data-game-price="39.99">加入购物车</button>
+                <button data-game-id="12" data-game-name="Death Stranding" data-game-price="39.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="13" data-game-name="Stardew Valley" data-game-price="14.99">
-                <img src="images\game\StardewValley.png" alt="Stardew Valley">
-                <h3>Stardew Valley</h3>
+                <img id="hover"src="images\game\StardewValley.png" alt="Stardew Valley">
+                <h3 id="hover">Stardew Valley</h3>
                 <p class="game-description">Stardew Valley is a farming simulation video game developed by ConcernedApe. The game is set in a small town called Pelican Town, where the player inherits a run-down farm.</p>
                 <div class="price">$ 14.99</div>
-                <button data-game-id="13" data-game-name="Stardew Valley" data-game-price="14.99">加入购物车</button>
+                <button data-game-id="13" data-game-name="Stardew Valley" data-game-price="14.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="14" data-game-name="Hades" data-game-price="24.99">
-                <img src="images\game\Hades.png" alt="Hades">
-                <h3>Hades</h3>
+                <img id="hover"src="images\game\Hades.png" alt="Hades">
+                <h3 id="hover">Hades</h3>
                 <p class="game-description">Hades is a roguelike dungeon crawler developed and published by Supergiant Games. The game is set in the Underworld, where the player controls Zagreus, the son of Hades.</p>
                 <div class="price">$ 24.99</div>
-                <button data-game-id="14" data-game-name="Hades" data-game-price="24.99">加入购物车</button>
+                <button data-game-id="14" data-game-name="Hades" data-game-price="24.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="15" data-game-name="Hollow Knight" data-game-price="14.99">
-                <img src="images\game\HollowKnight.png" alt="Hollow Knight">
-                <h3>Hollow Knight</h3>
+                <img id="hover"src="images\game\HollowKnight.png" alt="Hollow Knight">
+                <h3 id="hover">Hollow Knight</h3>
                 <p class="game-description">Hollow Knight is a Metroidvania video game developed and published by Team Cherry. The game is set in the kingdom of Hallownest, which is being plagued by a mysterious infection.</p>
                 <div class="price">$ 14.99</div>
-                <button data-game-id="15" data-game-name="Hollow Knight" data-game-price="14.99">加入购物车</button>
+                <button data-game-id="15" data-game-name="Hollow Knight" data-game-price="14.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="16" data-game-name="Celeste" data-game-price="19.99">
-                <img src="images\game\Celeste.png" alt="Celeste">
-                <h3>Celeste</h3>
+                <img id="hover"src="images\game\Celeste.png" alt="Celeste">
+                <h3 id="hover">Celeste</h3>
                 <p class="game-description">Celeste is a platformer video game developed by Matt Thorson and Noel Berry and published by Extremely OK Games. The game follows the story of Madeline, a young woman who is struggling to climb Mount Celeste.</p>
                 <div class="price">$ 19.99</div>
-                <button data-game-id="16" data-game-name="Celeste" data-game-price="19.99">加入购物车</button>
+                <button data-game-id="16" data-game-name="Celeste" data-game-price="19.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="17" data-game-name="Cuphead" data-game-price="19.99">
-                <img src="images\game\Cuphead.png" alt="Cuphead">
-                <h3>Cuphead</h3>
+                <img id="hover"src="images\game\Cuphead.png" alt="Cuphead">
+                <h3 id="hover">Cuphead</h3>
                 <p class="game-description">Cuphead is a run-and-gun video game developed and published by Studio MDHR. The game is inspired by 1930s cartoons and features a unique hand-drawn animation style.</p>
                 <div class="price">$ 19.99</div>
-                <button data-game-id="17" data-game-name="Cuphead" data-game-price="19.99">加入购物车</button>
+                <button data-game-id="17" data-game-name="Cuphead" data-game-price="19.99">Add to Cart</button>
             </div>
             
             <div class="game-card" data-game-id="18" data-game-name="Undertale" data-game-price="9.99">
-                <img src="images\game\Undertale.png" alt="Undertale">
-                <h3>Undertale</h3>
+                <img id="hover"src="images\game\Undertale.png" alt="Undertale">
+                <h3 id="hover">Undertale</h3>
                 <p class="game-description">Undertale is a role-playing video game created by Toby Fox. The game is known for its unique combat system, where players can choose to fight or spare their enemies.</p>
                 <div class="price">$ 9.99</div>
-                <button data-game-id="18" data-game-name="Undertale" data-game-price="9.99">加入购物车</button>
+                <button data-game-id="18" data-game-name="Undertale" data-game-price="9.99">Add to Cart</button>
             </div>
 
         </section>
     </main>
 
     <footer>
-        <p>© 2023 KaliJerry's Games Shop</p>
+        <p id="center">© 2023 KaliJerry's Games Shop</p>
     </footer> 
 
     <script src="js/index.js"></script> </body>

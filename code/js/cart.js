@@ -1,91 +1,60 @@
-        // 获取 localStorage 中的购物车信息
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+// cart.js
 
-        // 获取购物车商品列表区域
-        let cartItemsContainer = document.getElementById('cart-items');
+// 获取购物车信息
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        // 获取总价区域
-        let totalPriceElement = document.getElementById('total-price');
+// 获取购物车元素
+const cartContainer = document.getElementById('cart-container');
+const checkoutButton = document.getElementById('checkout-button');
 
-        // 获取清空购物车按钮
-        let clearCartButton = document.getElementById('clear-cart');
+// 渲染购物车内容
+function renderCart() {
+  // 清空购物车内容
+  cartContainer.innerHTML = '';
 
-        // 获取结算按钮
-        let checkoutButton = document.getElementById('checkout');
+  if (cart.length === 0) {
+    // 购物车为空
+    const emptyMessage = document.createElement('p');
+    emptyMessage.textContent = '您的购物车是空的';
+    cartContainer.appendChild(emptyMessage);
+  } else {
+    // 购物车不为空
+    cart.forEach(item => {
+      // 创建购物车条目元素
+      const cartItem = document.createElement('div');
+      cartItem.classList.add('cart-item');
 
-        // 渲染购物车商品列表
-        function renderCartItems() {
-            cartItemsContainer.innerHTML = ''; // 清空列表
+      // 创建游戏名称元素
+      const gameName = document.createElement('p');
+      gameName.textContent = item.name;
 
-            let totalPrice = 0;
+      // 创建游戏价格元素
+      const gamePrice = document.createElement('p');
+      gamePrice.textContent = `Price: ${item.price}$`;
 
-            // 遍历购物车商品
-            cart.forEach(item => {
-                let cartItem = document.createElement('div');
-                cartItem.classList.add('cart-item');
-                cartItem.innerHTML = `
-                    <h3>${item.name}</h3>
-                    <p>数量：<span class="item-quantity">${item.quantity}</span></p>
-                    <p>价格：￥<span class="item-price">${item.price}</span></p>
-                    <button class="adjust-quantity" data-product-id="${item.id}" data-action="decrease">-</button>
-                    <button class="adjust-quantity" data-product-id="${item.id}" data-action="increase">+</button>
-                `;
-                cartItemsContainer.appendChild(cartItem);
 
-                // 计算总价
-                totalPrice += item.price * item.quantity;
-            });
+      // 将元素添加到购物车条目元素
+      cartItem.appendChild(gameName);
+      cartItem.appendChild(gamePrice);
 
-            // 更新总价
-            totalPriceElement.textContent = totalPrice.toFixed(2);
-        }
 
-        // 更新购物车数量
-        function updateCartCount() {
-            let cartCount = 0;
-            cart.forEach(item => {
-                cartCount += item.quantity;
-            });
-            document.getElementById('cart-count').textContent = cartCount;
-        }
+      // 将购物车条目元素添加到购物车容器
+      cartContainer.appendChild(cartItem);
+    });
+  }
+}
 
-        // 清空购物车
-        clearCartButton.addEventListener('click', () => {
-            localStorage.removeItem('cart');
-            cart = [];
-            renderCartItems();
-            updateCartCount();
-        });
+// 添加结账按钮的点击事件
+checkoutButton.addEventListener('click', () => {
+  // 检查购物车是否为空
+  if (cart.length === 0) {
+    alert('您的购物车是空的！');
+    return;
+  }
 
-        // 结算
-        checkoutButton.addEventListener('click', () => {
-            // 跳转到结算页面
-            window.location.href = 'checkout.html';
-        });
+  // 跳转到 checkout.html
+  window.location.href = 'checkout.html';
+});
 
-        // 调整商品数量
-        cartItemsContainer.addEventListener('click', (event) => {
-            if (event.target.classList.contains('adjust-quantity')) {
-                const productId = event.target.dataset.productId;
-                const action = event.target.dataset.action;
-
-                // 查找商品
-                let productIndex = cart.findIndex(item => item.id === productId);
-                if (productIndex !== -1) {
-                    if (action === 'increase') {
-                        cart[productIndex].quantity++;
-                    } else if (action === 'decrease' && cart[productIndex].quantity > 1) {
-                        cart[productIndex].quantity--;
-                    } else if (action === 'decrease' && cart[productIndex].quantity === 1) {
-                        cart.splice(productIndex, 1); // 删除数量为 0 的商品
-                    }
-
-                    localStorage.setItem('cart', JSON.stringify(cart));
-                    renderCartItems();
-                }
-            }
-        });
-
-        // 页面加载时渲染购物车商品列表
-        renderCartItems();
-        updateCartCount();
+// 渲染购物车内容
+renderCart();

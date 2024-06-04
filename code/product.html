@@ -3,41 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>产品页面</title>
+    <title>Game Details</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>我的电商网站</h1>
+
         <nav>
             <ul>
-                <li><a href="index.html">首页</a></li>
-                <li><a href="product.html">产品</a></li>
-                <li><a href="checkout.html">结账</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">cart</a></li>
             </ul>
         </nav>
     </header>
 
 <main>
-    <h1>产品详情</h1>
+    <h1 id="title1">Game Details</h1>
+        <div class="game-card">
+            <script>
+                // 获取查询参数
+                const urlParams = new URLSearchParams(window.location.search);
+                const gameId = urlParams.get('gameId');
+                const gameName = urlParams.get('gameName');
+                const gameDescription = urlParams.get('gameDescription');
+                const gameImage = urlParams.get('gameImage');
 
-    <script>
-        // 获取查询参数
-        const urlParams = new URLSearchParams(window.location.search);
-        const gameId = urlParams.get('gameId');
-        const gameName = urlParams.get('gameName');
-        const gameDescription = urlParams.get('gameDescription');
-        const gameImage = urlParams.get('gameImage');
-
-        // 显示游戏信息
-        document.write(`<h2>${gameName}</h2>`);
-        document.write(`<img src="${gameImage}" alt="${gameName}">`);
-        document.write(`<p>${gameDescription}</p>`);
-    </script>
-
+                // 显示游戏信息
+                document.write(`<h2 id="title2">${gameName}</h2>`);
+                document.write(`<img id="imgCenter" src="${gameImage}" alt="${gameName}">`);
+                document.write(`<p>${gameDescription}</p>`);
+            </script>
+        </div>
 </main>
     <footer>
-        <p>© 2023 KaliJerry的电商网站</p>
+        <p id="center">© 2023 KaliJerry's Games Shop</p>
     </footer>
 
 </body>
