@@ -18,25 +18,27 @@
         </nav>
     </header>
 
-    <main>
-        <!-- 产品页面内容 -->
-        <section class="product-details">
-            <div class="product-image">
-                <img src="images/product1.jpg" alt="产品图片">
-            </div>
-            <div class="product-info">
-                <h2>产品名称</h2>
-                <p>产品描述</p>
-                <p>价格：￥100</p>
-                <button>加入购物车</button>
-            </div>
-        </section>
-    </main>
+<main>
+    <h1>产品详情</h1>
 
+    <script>
+        // 获取查询参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('gameId');
+        const gameName = urlParams.get('gameName');
+        const gameDescription = urlParams.get('gameDescription');
+        const gameImage = urlParams.get('gameImage');
+
+        // 显示游戏信息
+        document.write(`<h2>${gameName}</h2>`);
+        document.write(`<img src="${gameImage}" alt="${gameName}">`);
+        document.write(`<p>${gameDescription}</p>`);
+    </script>
+
+</main>
     <footer>
         <p>© 2023 KaliJerry的电商网站</p>
     </footer>
 
-    <script src="js/script.js"></script>
 </body>
 </html>
