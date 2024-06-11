@@ -1,0 +1,65 @@
+.game-gallery {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    background-color: rgb(24,48,70); /* 深灰色背景 */
+    gap: 20px;
+    overflow: hidden; /* 隐藏所有滚动条 */
+}
+
+.game-card {
+    background-color: rgb(22, 90, 216); /* 深蓝色背景 */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    flex-grow: 1;
+    max-width: 80%;
+    text-align: center; /* 使游戏卡片中的文字居中 */
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.game-description {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.game-card button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.game-card button:hover {
+    background-color: #3e8e41;
+}
+
+.swiper-container {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-wrapper {
+    display: flex; /* 使卡片水平排列 */
+    gap: 20px;   /* 设置卡片之间的间距 */
+}
+
+.swiper-slide {
+    flex-shrink: 0; /* 防止卡片缩小 */
+}

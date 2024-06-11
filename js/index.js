@@ -47,9 +47,9 @@ function addToCart(event) {
 }
 
 
-
-
 const gameCards = document.querySelectorAll('.game-card');
+
+
 
 gameCards.forEach(gameCard => {
     gameCard.addEventListener('click', function(event) {
@@ -264,4 +264,5 @@ gameCards.forEach(gameCard => {
             window.location.href = `product.html?gameId=${gameId}&gameName=${game.name}&gameDescription=${game.description}&gameImage=${game.image}`;
         }
     });
+
 });
