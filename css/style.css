@@ -1,10 +1,11 @@
 /* 全局样式 */
 body {
-  font-family: 'Roboto', sans-serif; /* 使用 Roboto 字体 */
+  font-family: var(--font-family); /* 使用 CSS 变量 */
   margin: 0;
-  background-color: rgb(24,48,70); /* 深灰色背景 */
-  color: #fff; /* 白色文字 */
+  background-color: var(--background-color); /* 使用 CSS 变量 */
+  color: var(--text-color); /* 使用 CSS 变量 */
 }
+
 
 /* 标题样式 */
 h1, h2 {
@@ -330,4 +331,30 @@ iframe {
 .game-gallery {
   padding: 0; /* 确保画廊页面没有内边距 */
   overflow: hidden; /* 隐藏所有滚动条 */
+}
+/* 主题 1 */
+.theme-1 {
+  --background-color: rgb(24,48,70); /* 深灰色背景 */
+  --text-color: #333;
+  --font-family: 'Arial', sans-serif;
+}
+
+/* 主题 2 */
+.theme-2 {
+  --background-color: #70ef30;
+  --text-color: #fff;
+  --font-family: 'Helvetica', sans-serif;
+}
+
+/* 字体大小 */
+.font-size-small {
+  font-size: 14px;
+}
+
+.font-size-medium {
+  font-size: 24px;
+}
+
+.font-size-large {
+  font-size: 36px;
 }
